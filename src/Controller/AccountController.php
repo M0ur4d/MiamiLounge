@@ -115,6 +115,7 @@ class AccountController extends AbstractController
      * Modification du mot de passe
      * 
      * @Route("/account/password-update", name="account_password")
+     * @IsGranted("ROLE_USER")
      * 
      * @return Response
      */
