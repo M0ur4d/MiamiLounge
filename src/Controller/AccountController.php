@@ -41,7 +41,7 @@ class AccountController extends AbstractController
      * 
      * @Route("/logout", name="account_logout")
      * 
-     * @return viod
+     * @return void
      */
     public function logout()
     {
