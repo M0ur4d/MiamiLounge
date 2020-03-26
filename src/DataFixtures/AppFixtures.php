@@ -73,7 +73,7 @@ class AppFixtures extends Fixture
             $ad= new Ad();
 
             $title = $faker->sentence();
-            $coverImage = $faker->imageUrl(1000, 350);
+            $coverImage = "https://picsum.photos/1200/350?random=" . mt_rand(1, 55000);
             $introduction = $faker->paragraph(2);
             $content = '<p>'. join('</p><p>', $faker->paragraphs(5)).'</p>';
 
@@ -90,7 +90,7 @@ class AppFixtures extends Fixture
             for($j =1 ; $j <= mt_rand(2,5); $j++){
                 $image = new Image();
 
-                $image->setUrl($faker->imageUrl())
+                $image->setUrl("https://picsum.photos/640/480?random=" . mt_rand(0, 55000))
                       ->setCaption($faker->sentence())
                       ->setAd($ad);
 
@@ -108,7 +108,7 @@ class AppFixtures extends Fixture
                 $endDate = (clone $startDate)->modify("+$duration days");
 
                 $amount = $ad->getPrice() * $duration;
-                $booker = $users[mt_rand(0, count($users) -1)];
+                $booker = $users[mt_rand(0, count($users) - 1)];
                 $comment = $faker->paragraph();
 
                 $booking->setBooker($booker)

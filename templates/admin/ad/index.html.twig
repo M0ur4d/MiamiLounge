@@ -26,10 +26,19 @@
                     {{ad.author.fullName}}
                 </td>
                 <td class="text-center">
-                <span class="badge badge-primary rounded">{{ad.bookings | length}}</span>
+                {% if ad.bookings | length == 0 %}
+                <span>Aucune</span>
+                {% else %}
+                <span class="badge badge-primary rounded">{{ad.bookings | length}}</span>  
+                {% endif %}
+                
                 </td>
                 <td class="text-center">
-                <span class="badge badge-primary rounded">{{ad.avgRatings | number_format(1, ',', ' ')}}</span>
+                {% if ad.avgRatings == 0 %}
+                <span>Pas encore noté</span>
+                {% else %}
+                <span class="badge badge-primary rounded">{{ad.avgRatings | number_format(1, ',', ' ')}}</span> 
+                {% endif %}
                 </td>
                 <td>
                     <a href="{{ path("admin_ads_edit", {'id': ad.id}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>

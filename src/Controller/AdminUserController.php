@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\AccountType;
 use App\Repository\UserRepository;
+use App\Service\PaginationService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,12 +15,16 @@ use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 class AdminUserController extends AbstractController
 {
     /**
-     * @Route("/admin/users", name="admin_user_index")
+     * @Route("/admin/users/{page<\d+>?1}", name="admin_user_index")
      */
-    public function index(UserRepository $repo)
+    public function index(UserRepository $repo, $page, PaginationService $pagination)
     {
+        $pagination->setEntityClass(User::class)
+                    ->setLimit(5)           
+                    ->setPage($page);
+
         return $this->render('admin/user/index.html.twig', [
-            'users' => $repo->findAll()
+            'pagination' => $pagination
         ]);
     }
 

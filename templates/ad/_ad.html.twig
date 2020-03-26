@@ -2,7 +2,12 @@
 <div class="col-md-4">
     <div class="card bg-light m-3">
         <div class="card-header text-center">
-        {{ ad.rooms }} chambres, <strong>{{ ad.price | number_format(2, ',', ' ') }} &euro; </strong><br>
+        {% if ad.rooms == 1  %}
+            {{ ad.rooms }} chambre, 
+        {% else %}    
+            {{ ad.rooms }} chambres, 
+        {% endif %}
+        <strong>{{ ad.price | number_format(2, ',', ' ') }} &euro; </strong><br>
             {% if ad.comments|length > 0 %}
                 {% include "partials/rating.html.twig" with {'rating': ad.avgRatings} %}
             {% else %} 
