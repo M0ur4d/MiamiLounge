@@ -17,7 +17,7 @@
                     <h2>Informations générales</h2>
                     <hr>
                     {{ form_row(form.title) }}
-                    {{ form_row(form.slug) }}
+                    {# {{ form_row(form.slug) }} #}
                     {{ form_row(form.price) }}
                     {{ form_row(form.rooms) }}
                 </div>
@@ -53,6 +53,7 @@
 
 {% block javascripts %}
 
-<script src="/js/ad.js" ></script>
+{# <script src="/js/ad.js" ></script> #}
+{{ encore_entry_script_tags('ad') }}
 
 {% endblock %}

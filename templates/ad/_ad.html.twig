@@ -21,10 +21,10 @@
         <div class="card-body">
             <h4 class="card-title">
             <a href="{{ url }}">
-                {{ad.title}}
+                {{ad.title|slice(0, 20) ~ '...'}}
                 </a>
             </h4>
-            <p>{{ad.introduction}}</p>
+            <p>{{ad.introduction|slice(0, 50) ~ '...'}}</p>
         </div>
 
         <a href="{{ url }}" class="btn btn-primary float-right">En savoir plus</a>

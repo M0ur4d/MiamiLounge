@@ -8,10 +8,10 @@
 
 <div class="bkgtitle" style="background-image:url({{ad.coverImage}})">
     <div class="container">
-        <h1>{{ad.title}}</h1>
-        <p>{{ad.introduction}}</p>
-        <p class="h2"><strong>{{ad.rooms}} chambres</strong> pour <strong>{{ad.price | number_format(2, ',', ' ') }} &euro;</strong></p>
-        <a href="{{path('booking_create', {'slug': ad.slug})}}" class="btn btn-primary">Réserver!</a>
+        <h1 id="txtsdshow">{{ad.title}}</h1>
+        <p class="h5 mt-5" id="txtsdshow">{{ad.introduction}}</p>
+        <p class="h3 mt-5" id="txtsdshow"><strong>{{ad.rooms}} chambres</strong> pour <strong>{{ad.price | number_format(2, ',', ' ') }} &euro;</strong></p>
+        <a href="{{path('booking_create', {'slug': ad.slug})}}" class="btn btn-primary my-4">Réserver!</a>
         {% if app.user and app.user == ad.author %}
         <a href="{{path('ads_edit', {'slug':ad.slug})}}" class="btn btn-secondary">Modifier l'annonce</a>
         <a href="{{path('ads_delete', {'slug':ad.slug})}}" class="btn btn-danger" onclick="return confirm(`Êtes vous sur de vouloir supprimer l'annonce : {{ad.title}} ?`)">Supprimer l'annonce</a>
@@ -20,12 +20,12 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container my-4">
     <div class="row">
         <div class="col-md-8 mb-3">
             {{ad.content | raw }}
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                    {% for image in ad.images %}
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ loop.index0 }}" {% if loop.first %} class="active" {% endif %}></li>
@@ -57,7 +57,7 @@
             {% if ad.comments|length > 0 %}
                 <h2 class="mb-3">Commentaires de nos voyageurs :</h2>
 
-                <div class="alert alert-info">
+                <div class="alert alert-info mt-4">
                     <h4 class="alert-heading text-center">
                         <div class="row align-items-center">
                             <div class="col">
@@ -104,7 +104,7 @@
                    <span class="badge badge-primary">{{a.ads | length}} annonces</span>
               </div>
            </div>
-            {{ a.description | raw}}
+            <p>{{ a.description | raw}}</p>
         </div>
     </div>
 </div>
