@@ -6,8 +6,7 @@
 
 
 {% block body %}
-<div class="container mt-5">
-    <div class="jumbotron mt-3">
+<div class="headervid">
 {#         <h1 class="display-4">Bienvenue sur Miami Lounge !</h1>
         <p class="lead">Nous mettons en relation les voyageurs et les propriétaires qui veulent profiter d'opportunités et gagner de l'argent en proposant leur bien à la location.</p>
         <hr class="my-4">
@@ -22,19 +21,19 @@
             <div class="container h-100">
               <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
-                  <h1 class="display-4">Bienvenue sur Miami Lounge !</h1>
+                  <h1 class="display-4">Bienvenue sur <br><i class="fas fa-umbrella-beach"></i> Miami Lounge !</h1>
                   <p>Venez voir et trouver où vous pourrez loger lors de votre prochain déplacement à Miami ?</p>
                   <p class="lead my-5">
-                    <a class="btn btn-primary btn-lg" href="{{ path('ads_index') }}" role="button">Voir nos annonces</a>
+                    <a class="btn btn-warning btn-lg" href="{{ path('ads_index') }}" role="button">Voir nos annonces</a>
                   </p>
                 </div>
               </div>
             </div>
     </div>
-  
+
+<div class="container mt-5">
 
   <h2 class="h1 my-5">Nos appartements stars</h2>
-
   <div class="row">
     {% for data in ads %}
       {% include "ad/_ad.html.twig" with {'ad': data.annonce } %}
@@ -46,7 +45,7 @@
   <div class="row">
     {% for data in users %}
     <div class="col">
-      <div class="card border-secondary mb-3">
+      <div class="card shadow-lg bg-light mb-5">
          <div class="card-body">
            <h4 class="card-title">{{data.user.fullName}}</h4>
            <hr>
@@ -60,5 +59,12 @@
     </div>
     {% endfor %}
   </div>
+<!--Google map-->
+<div id="map-container-google-1" class="z-depth-1-half map-container mb-5" style="height: 500px">
+  <iframe src="https://maps.google.com/maps?q=Miami&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+
+<!--Google Maps-->
 </div>
 {% endblock %}

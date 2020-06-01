@@ -11,6 +11,7 @@
         {# <link rel="stylesheet" href="/css/app.css"> #}
         {# <link rel="stylesheet" href="{{ asset('build/app.css') }}">#}
         {{ encore_entry_link_tags('app') }}
+        {# <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet"> #}
         
      
         {% block stylesheets %}{% endblock %}
@@ -27,6 +28,7 @@
 
         {#<script src="{{asset('build/js/app.js')}}"></script>#}
         {{ encore_entry_script_tags('app') }}
+        {# <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/js/mdb.min.js"></script> #}
 
         {% block javascripts %}{% endblock %}
     </body>

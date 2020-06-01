@@ -1,6 +1,6 @@
 {% set url = path('ads_show', {'slug': ad.slug}) %}
 <div class="col-md-4">
-    <div class="card bg-light m-3">
+    <div class="card shadow-lg bg-light m-3">
         <div class="card-header text-center">
         {% if ad.rooms == 1  %}
             {{ ad.rooms }} chambre, 
@@ -11,7 +11,7 @@
             {% if ad.comments|length > 0 %}
                 {% include "partials/rating.html.twig" with {'rating': ad.avgRatings} %}
             {% else %} 
-                <small>Pas encore noté</small>
+                <small class="text-muted">Pas encore noté</small>
             {% endif %}
             
         </div>

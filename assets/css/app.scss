@@ -1,10 +1,19 @@
 
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Righteous|Roboto&display=swap');
+
 
 /* .container, .container-fluid{
     margin-top: 20px;
     
 } */
+
+html,body{
+  font-family: 'Righteous', cursive;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+
 
 #txtsdshow{
   color: #FFFFFF;
@@ -37,6 +46,7 @@
 .footer{
     width: 100%;
 }
+
 .avatar{
     max-width: 128px;
     max-height: 128px;
@@ -77,7 +87,7 @@ span.rating i {
         color: white;
     }
 }
-div.jumbotron {
+.headervid {
     position: relative;
     background-color: black;
     height: 75vh;
@@ -86,7 +96,7 @@ div.jumbotron {
     overflow: hidden;
   }
   
-div.jumbotron video {
+  .headervid video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -101,12 +111,12 @@ div.jumbotron video {
     transform: translateX(-50%) translateY(-50%);
   }
   
-div.jumbotron .container {
+  .headervid .container {
     position: relative;
     z-index: 2;
   }
   
-div.jumbotron .overlay {
+  .headervid .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -118,10 +128,10 @@ div.jumbotron .overlay {
   }
   
   @media (pointer: coarse) and (hover: none) {
-    div.jumbotron {
+    .headervid {
       background: url('https://img.wallpapersafari.com/desktop/1600/900/45/34/Hd3rUY.jpg') black no-repeat center center scroll;
     }
-    div.jumbotron video {
+    .headervid video {
       display: none;
     }
   }
@@ -238,3 +248,69 @@ div.jumbotron .overlay {
     color: #777;
   }
 }
+
+#titlehead{
+  font-size: 40px;
+}
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  100% {
+    transform:translateY(0rem);
+    opacity: 1;
+  }
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: transform;
+    -webkit-opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
+}
+
+.map-container{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  }
+  .map-container iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+  }
+
+.roboto{
+  font-family: 'Roboto', sans-serif;
+}  
